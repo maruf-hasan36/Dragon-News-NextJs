@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import userLogo from "@/assets/user.png";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   return (
@@ -9,13 +9,13 @@ const Navbar = () => {
       <div></div>
       <ul className="flex justify-between items-center gap-5 text-zinc-700">
         <li>
-          <Link href="/">Home</Link>
+          <NavLink href="/">Home</NavLink>
         </li>
         <li>
-          <Link href="/about">About US</Link>
+          <NavLink href="/about">About</NavLink>
         </li>
         <li>
-          <Link href="/career">Career</Link>
+          <NavLink href="/career">Career</NavLink>
         </li>
       </ul>
 

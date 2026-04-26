@@ -12,11 +12,11 @@ const BreakingNews = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center bg-zinc-200 px-2 py-2 container w-10/12 mx-auto">
+    <div className="flex justify-between items-center bg-zinc-200 px-4 py-3 text-red-800 font-bold w-10/12 mx-auto">
       <button className="btn bg-[#D72050] text-white ">Latest</button>
       <Marquee pauseOnHover={true} speed={100}>
         {usaUpdates.map((news) => (
-          <div className="mx-10" key={news.id}>
+          <div className="mx-5" key={news.id}>
             <span>{news.title}</span>
           </div>
         ))}
