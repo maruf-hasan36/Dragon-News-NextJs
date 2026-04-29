@@ -1,21 +1,8 @@
 import Leftside from "@/components/homepage/news/Leftside";
+import NewsCard from "@/components/homepage/news/NewsCard";
 import Rightside from "@/components/homepage/news/Rightside";
+import { getCatagories, getNewsByCatagoryID } from "@/lib/dataFatching";
 import React from "react";
-
-const getCatagories = async () => {
-  const res = await fetch(
-    "https://openapi.programming-hero.com/api/news/categories",
-  );
-  const data = await res.json();
-  return data.data;
-};
-const getNewsByCatagoryID = async (catagoryID) => {
-  const res = await fetch(
-    `https://openapi.programming-hero.com/api/news/category/${catagoryID}`,
-  );
-  const data = await res.json();
-  return data.data;
-};
 
 const CategoryDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -33,8 +20,8 @@ const CategoryDetailsPage = async ({ params }) => {
           {news.length > 0 ? (
             news.map((n) => {
               return (
-                <div className="p-6 border rounded-md text-xl" key={n._id}>
-                  {n.title}
+                <div className="p-6 rounded-md text-xl" key={n._id}>
+                  <NewsCard news={n}></NewsCard>
                 </div>
               );
             })
